@@ -1,7 +1,9 @@
 var express = require('express');
+const nespresso_controlers= require('../controllers/nespresso'); 
 var router = express.Router();
 
 /* GET home page. */
+router.get('/', nespresso_controlers.nespresso_view_all_Page ); 
 router.get('/', function(req, res, next) {
   res.render('nespresso', { title: 'Search Results Nespresso' });
 });
@@ -14,3 +16,15 @@ module.exports = router;
 //- 8) Inside the app.js add in an endpoint to correspond to the class. 
 //- 9) Restart the local heroku server and verify that the new endpoint works. 
 //- 10) Add, Commit and Push to origin main. M, N
+
+/* GET detail nespresso page */ 
+router.get('/detail', nespresso_controlers.nespresso_view_one_Page); 
+
+/* GET create nespresso page */ 
+router.get('/create', nespresso_controlers.nespresso_create_Page); 
+
+/* GET create update page */ 
+router.get('/update', nespresso_controlers.nespresso_update_Page); 
+
+/* GET create nespresso page */ 
+router.get('/delete', nespresso_controlers.nespresso_delete_Page); 

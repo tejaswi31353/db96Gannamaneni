@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1(id='nespressotitle')= title
+  if (toShow == null)
+    h2 No instance to get detail
+  else
+      - let nespressoid = toShow._id
+      - let nespressoname = toShow.nespresso_type
+      - let country = toShow.country
+      - let price = toShow.price
+      div
+        div.row
+          div(class='nespressoAttr mr-3') nespresso ID is:
+          div(class='nespressovalues') #{nespressoid}
+        div.row
+          div(class='nespressoAttr mr-3') nespressoname is:
+          div(class="nespressovalues") #{nespressoname}
+        div.row
+          div(class='nespressoAttr mr-3') country is:
+          div(class="nespressovalues") #{country}
+        div.row
+          div(class='nespressoAttr mr-3') price is:
+          div(class="nespressovalues") #{price}
+
+
